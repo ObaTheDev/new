@@ -1,0 +1,121 @@
+@import "tailwindcss";
+
+:root {
+  --bg-page: #fbfbf9;
+  --bg-paper: #ffffff;
+  --bg-card: #f5f4f0;
+  --ink-primary: #111111;
+  --ink-secondary: #333333;
+  --ink-muted: #5a5a5a;
+  --ink-light: #767676;
+  --border-dark: #111111;
+  --border-rule: #d4d0c8;
+  --border-subtle: #e5e2da;
+  --tan-red: #d9221e;
+  --tan-red-hover: #b81815;
+}
+
+body {
+  background-color: var(--bg-page);
+  color: var(--ink-primary);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Authentic physical broadside newspaper sheet */
+.newspaper-wrapper {
+  background-color: var(--bg-paper);
+  background-image: 
+    radial-gradient(rgba(17, 17, 17, 0.04) 1px, transparent 1px),
+    linear-gradient(to right, rgba(0, 0, 0, 0.015) 1px, transparent 1px);
+  background-size: 6px 6px, 100% 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #f0eee9;
+}
+::-webkit-scrollbar-thumb {
+  background: #c2bdb4;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--tan-red);
+}
+
+/* Newspaper Masthead Serif */
+.tan-masthead {
+  font-family: "Playfair Display", Georgia, serif;
+  letter-spacing: 0.04em;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+/* Section Header Bar */
+.tan-section-title {
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (min-width: 640px) {
+  .tan-section-title {
+    font-size: 1.75rem;
+  }
+}
+
+/* Classic Newspaper Double Horizontal Rule */
+.newspaper-double-rule {
+  border-top: 3px solid #111111;
+  border-bottom: 1px solid #111111;
+  padding-top: 2px;
+  padding-bottom: 2px;
+}
+
+.newspaper-rule {
+  border-top: 1px solid #111111;
+}
+
+/* Category Badge (Newspaper Tag) */
+.tan-tag {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #222222;
+  border: 1px solid #222222;
+  padding: 1.5px 6px;
+  background-color: #f7f6f2;
+  font-weight: 700;
+  font-family: "JetBrains Mono", monospace;
+}
+
+.tan-tag-red {
+  display: inline-block;
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background-color: var(--tan-red);
+  color: #ffffff;
+  padding: 2px 7px;
+  font-weight: 700;
+  font-family: "JetBrains Mono", monospace;
+}
+
+/* High contrast halftone press engraving photo style */
+.tan-img-filter {
+  filter: grayscale(100%) contrast(115%) brightness(98%);
+  transition: filter 0.35s ease, transform 0.4s ease;
+}
+
+.group:hover .tan-img-filter,
+.tan-img-filter:hover {
+  filter: grayscale(0%) contrast(104%);
+}
